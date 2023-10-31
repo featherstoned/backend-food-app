@@ -13,9 +13,9 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
       return ctx.unauthorized("You are not authorized!");
     }
 
-    console.log(ctx.request.body.data);
-    console.log(ctx.state.user.id);
-    console.log("order controller");
+    // console.log(ctx.request.body.data);
+    // console.log(ctx.state.user.id);
+    // console.log("order controller");
 
     const { address, amount, dishes, token, city, state } =
       ctx.request.body.data;
@@ -41,6 +41,11 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
           user: ctx.state.user.id,
         },
       });
+      console.log(ctx.request.body.data);
+      console.log(ctx.state.user.id);
+      console.log("order controller");
+
+      
       return order;
     } catch (err) {
       // return 500 error
