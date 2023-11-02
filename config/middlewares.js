@@ -23,7 +23,12 @@
 module.exports = [
   'strapi::errors',
   'strapi::security',
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: ['https://frontend-food-app-six.vercel.app', 'https://strapi-g6mo.onrender.com'],
+    },
+  },
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
@@ -31,11 +36,4 @@ module.exports = [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
-  {
-    name: 'strapi::cors',
-    config: {
-      enabled: true,
-      origin: ['https://frontend-food-app-six.vercel.app'],
-    },
-  },
 ];
